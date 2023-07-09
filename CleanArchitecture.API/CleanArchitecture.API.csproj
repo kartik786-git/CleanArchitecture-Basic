@@ -5,8 +5,10 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dd599fd8-c993-4e82-815c-9f2824783f42</UserSecretsId>
+	  <!--<ContainerBaseImage>mcr.microsoft.com/dotnet/runtime:6.0</ContainerBaseImage>-->
 	  <ContainerImageName>webapi-image</ContainerImageName>
 	  <ContainerImageTag>3.3.3</ContainerImageTag>
+	  <!--<ContainerRegistry>registry.mycorp.com:1234</ContainerRegistry>-->
 	  <!--<ContainerWorkingDirectory>/bin</ContainerWorkingDirectory>-->
   </PropertyGroup>
 
