@@ -1,20 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dd599fd8-c993-4e82-815c-9f2824783f42</UserSecretsId>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	  <ContainerImageName>webapi-image</ContainerImageName>
+	  <ContainerImageTag>3.3.3</ContainerImageTag>
+	  <!--<ContainerWorkingDirectory>/bin</ContainerWorkingDirectory>-->
   </PropertyGroup>
 
+
+	<ItemGroup>
+		<ContainerEnvironmentVariable Include="DOTNET_ENVIRONMENT" Value="Development" />
+	</ItemGroup>
+
+	<!--<ItemGroup>
+		<ContainerPort Include="80" Type="tcp" />
+	</ItemGroup>-->
+	
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.2" />
+    <PackageReference Include="Microsoft.NET.Build.Containers" Version="7.0.305" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
